@@ -49,7 +49,7 @@ public class HouseService {
                 .retryWhen(applyRetryStrategy())
                 .flatMapMany(response -> Flux.fromIterable(response.getHouses()))
                 .flatMap(house ->
-                        fetchImageData(house.getPhotoUrl())
+                        fetchImageData(house.getPhotoURL())
                                 .retryWhen(applyRetryStrategy())
                                 .flatMap(imageData -> saveImageToFile(buildFilename(house), imageData))
                                 .thenReturn(house)
@@ -58,7 +58,7 @@ public class HouseService {
 
     private String buildFilename(House house) {
         return house.getId() +
-                sanitizeAddress(house.getAddress()) + "." + house.getPhotoUrl().substring(house.getPhotoUrl().lastIndexOf(".") + 1);
+                sanitizeAddress(house.getAddress()) + "." + house.getPhotoURL().substring(house.getPhotoURL().lastIndexOf(".") + 1);
     }
 
     private String sanitizeAddress(String address) {

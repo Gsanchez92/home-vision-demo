@@ -4,6 +4,9 @@ import java.util.List;
 
 public class HouseApiResponse {
 
+    public HouseApiResponse() {
+    }
+
     private List<House> houses;
     private boolean ok;
 
