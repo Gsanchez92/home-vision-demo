@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 
-
 @RestController
 @RequestMapping("/houses")
 public class HouseController {

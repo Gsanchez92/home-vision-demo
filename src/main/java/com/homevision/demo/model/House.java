@@ -8,8 +8,6 @@ public class House {
     private int price;
     private String photoURL;
 
-    // getters and setters for all fields
-
     public String getPhotoUrl() {
         return photoURL;
     }
